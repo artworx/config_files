@@ -1,0 +1,8 @@
+.*.swp
+tags
+*.swo
+jferris-*.gemspec
+*.scratch.*
+.idea
+*.taghl
+public/uploads/
