@@ -50,8 +50,11 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'tpope/vim-repeat'
+
+Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-bundler'
 Bundle 'plasticboy/vim-markdown'
+
 Bundle 'xolox/vim-easytags'
 Bundle 'mivok/vimtodo'
 Bundle 'kchmck/vim-coffee-script'
