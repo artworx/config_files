@@ -58,6 +58,8 @@ Bundle 'tpope/vim-bundler'
 Bundle 'plasticboy/vim-markdown'
 
 Bundle 'xolox/vim-easytags'
+Bundle 'xolox/vim-misc'
+
 Bundle 'mivok/vimtodo'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'jimmyhchan/dustjs.vim'
