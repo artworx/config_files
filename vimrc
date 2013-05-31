@@ -62,6 +62,8 @@ Bundle 'mivok/vimtodo'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'jimmyhchan/dustjs.vim'
 Bundle 'Lokaltog/vim-easymotion'
+
+Bundle 'svndiff'
 filetype plugin indent on     " required!
 
 let mapleader = ","
