@@ -33,6 +33,8 @@ Bundle 'tpope/vim-endwise'
 " Just one NERDTree, always and ever. It will always look the same in all
 " tabs, including expanded/collapsed nodes, scroll position etc.
 Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'nerdtree-ack'
+Bundle 'AutoComplPop'
 
 " Pasting in Vim with indentation adjusted to destination context
 Bundle 'sickill/vim-pasta'
