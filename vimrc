@@ -43,6 +43,9 @@ Bundle 'tpope/vim-surround'
 Bundle 'kana/vim-textobj-user'
 Bundle 'matchit.zip'
 Bundle 'nelstrom/vim-textobj-rubyblock'
+
+" Indentation based text objects
+Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'Raimondi/delimitMate'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'mattn/gist-vim'
