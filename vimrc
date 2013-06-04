@@ -69,6 +69,11 @@ Bundle 'jimmyhchan/dustjs.vim'
 Bundle 'Lokaltog/vim-easymotion'
 
 Bundle 'svndiff'
+
+" ejs templates
+Bundle 'briancollins/vim-jst'
+
+
 filetype plugin indent on     " required!
 
 let mapleader = ","
