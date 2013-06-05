@@ -431,3 +431,5 @@ let g:rails_projections = {
       \ }
       \ }
 
+" file mappings
+au BufRead,BufNewFile *.hamlc set ft=haml
