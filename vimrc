@@ -297,10 +297,10 @@ set complete=.,w,t
 " autocmd User Rails map <Leader>sg :RSconfig
 " autocmd User Rails map <Leader>tg :RTconfig
 
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+"nnoremap <Left> :echoe "Use h"<CR>
+"nnoremap <Right> :echoe "Use l"<CR>
+"nnoremap <Up> :echoe "Use k"<CR>
+"nnoremap <Down> :echoe "Use j"<CR>
 nnoremap 1 :tabprevious<CR>
 nnoremap 2 :tabnext<CR>
 
