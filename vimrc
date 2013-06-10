@@ -249,6 +249,7 @@ imap <C-F> <C-R>=expand("%")<CR>
 " Edit routes
 command! Rroutes :e config/routes.rb
 command! RTroutes :tabe config/routes.rb
+command! Ctags :! ctags -R --extra=+f --exclude=.git --exclude=log *
 
 " Color scheme
 colorscheme vividchalk
