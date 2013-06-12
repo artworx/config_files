@@ -1,3 +1,8 @@
 --type-add
 html=.haml,.hamlc
 
+--type-set
+coffee=.coffee
+
+--type-set
+scss=.scss
