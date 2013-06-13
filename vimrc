@@ -375,6 +375,8 @@ function! CloseHiddenBuffers()
       execute 'bwipeout' b
     endif
   endfor
+  NERDTree
+  NERDTreeClose
 endfun
 
 ca bo :call CloseHiddenBuffers()
