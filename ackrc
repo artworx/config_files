@@ -6,3 +6,6 @@ coffee=.coffee
 
 --type-set
 scss=.scss
+
+--type-add
+yaml=.yml

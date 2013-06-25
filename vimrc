@@ -425,8 +425,16 @@ let g:rails_projections = {
       \ },
       \ "spec/services/*_spec.rb": {
       \   "alternate": 'app/services/drivy/%s.rb'
+      \ },
+      \ "spec/factories/*.rb": {
+      \   "command": "factory",
+      \   "template": "FactoryGirl.define do\n factory: %S do\n end\n \nend",
       \ }
       \ }
 
 " file mappings
 au BufRead,BufNewFile *.hamlc set ft=haml
+
+" enable mouse, yey!
+set ttymouse=xterm2
+set mouse=n
