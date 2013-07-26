@@ -70,6 +70,8 @@ Bundle 'Lokaltog/vim-easymotion'
 
 Bundle 'svndiff'
 
+" nodejs
+Bundle 'digitaltoad/vim-jade'
 
 filetype plugin indent on     " required!
 
