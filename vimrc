@@ -170,6 +170,8 @@ set nowritebackup
 set history=500		" keep 500 lines of command line history
 set incsearch		" do incremental searching
 
+" When files were edited outside vim
+set autoread
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
