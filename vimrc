@@ -70,8 +70,11 @@ Bundle 'Lokaltog/vim-easymotion'
 
 Bundle 'svndiff'
 
+Bundle 'yaymukund/vim-rabl'
+
 " nodejs
 Bundle 'digitaltoad/vim-jade'
+
 
 filetype plugin indent on     " required!
 
@@ -429,6 +432,13 @@ let g:rails_projections = {
       \ },
       \ "spec/services/*_spec.rb": {
       \   "alternate": 'app/services/drivy/%s.rb'
+      \ },
+      \ "app/forms/*.rb": {
+      \   "command": "form",
+      \   "template": "class %S < Drivy::Form\nend",
+      \   "test": [
+      \     "spec/forms/%s_spec.rb"
+      \   ]
       \ },
       \ "spec/factories/*.rb": {
       \   "command": "factory",
