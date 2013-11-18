@@ -69,14 +69,25 @@ Bundle 'jimmyhchan/dustjs.vim'
 Bundle 'Lokaltog/vim-easymotion'
 
 Bundle 'svndiff'
-
 Bundle 'yaymukund/vim-rabl'
+
+" http://www.vim.org/scripts/script.php?script_id=1905"
+map w <Plug>CamelCaseMotion_w
+map b <Plug>CamelCaseMotion_b
+map e <Plug>CamelCaseMotion_e
+sunmap w
+sunmap b
+sunmap e
+
+Bundle 'camelcasemotion'
 
 " nodejs
 Bundle 'digitaltoad/vim-jade'
 
 
 filetype plugin indent on     " required!
+
+
 
 let mapleader = ","
 imap jj <Esc>
