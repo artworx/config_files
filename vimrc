@@ -71,6 +71,8 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'svndiff'
 Bundle 'yaymukund/vim-rabl'
 
+Bundle 'plantuml-syntax'
+
 " http://www.vim.org/scripts/script.php?script_id=1905"
 map w <Plug>CamelCaseMotion_w
 map b <Plug>CamelCaseMotion_b
