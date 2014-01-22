@@ -76,6 +76,8 @@ Bundle 'plantuml-syntax'
 
 Bundle "pangloss/vim-javascript"
 
+Bundle "godlygeek/tabular"
+
 " http://www.vim.org/scripts/script.php?script_id=1905"
 map w <Plug>CamelCaseMotion_w
 map b <Plug>CamelCaseMotion_b
