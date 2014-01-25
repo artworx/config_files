@@ -52,6 +52,10 @@ Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'kien/ctrlp.vim'
+" CtrlP extension for fuzzy-search in tag matches. May be used instead of
+" :tjump or :tselect for IDE-like Goto declaration functionality
+Bundle 'ivalkeen/vim-ctrlp-tjump'
+
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'AndrewRadev/splitjoin.vim'
@@ -77,6 +81,10 @@ Bundle 'plantuml-syntax'
 Bundle "pangloss/vim-javascript"
 
 Bundle "godlygeek/tabular"
+
+" https://github.com/marijnh/tern_for_vim
+" javascript complete
+Bundle "marijnh/tern_for_vim"
 
 " http://www.vim.org/scripts/script.php?script_id=1905"
 map w <Plug>CamelCaseMotion_w
@@ -538,3 +546,7 @@ let g:UltiSnips.snipmate_ft_filter = {
 
 " ejs files
 au BufNewFile,BufRead *.ejs set filetype=html
+
+" ivalkeen/vim-ctrlp-tjump
+nnoremap <c-]> :CtrlPtjump<cr>
+vnoremap <c-]> :CtrlPtjumpVisual<cr>
