@@ -18,8 +18,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'refactor-rails.vim'
 
 " Bundle 'MarcWeber/ultisnips'
-" Bundle 'SirVer/ultisnips'
-Bundle "MarcWeber/ultisnips"
+Bundle 'SirVer/ultisnips'
+
 " Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 
