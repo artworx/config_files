@@ -89,6 +89,11 @@ Bundle "matthewsimo/angular-vim-snippets"
 
 Bundle "groenewege/vim-less"
 
+Bundle "lmeijvogel/vim-yaml-helper"
+
+" front for ag, A.K.A. the_silver_searcher.
+Bundle 'rking/ag.vim'
+
 " http://www.vim.org/scripts/script.php?script_id=1905"
 map w <Plug>CamelCaseMotion_w
 map b <Plug>CamelCaseMotion_b
