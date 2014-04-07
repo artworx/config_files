@@ -85,6 +85,9 @@ Bundle "godlygeek/tabular"
 " https://github.com/marijnh/tern_for_vim
 " javascript complete
 Bundle "marijnh/tern_for_vim"
+Bundle "matthewsimo/angular-vim-snippets"
+
+Bundle "groenewege/vim-less"
 
 " http://www.vim.org/scripts/script.php?script_id=1905"
 map w <Plug>CamelCaseMotion_w
@@ -539,11 +542,11 @@ let g:UltiSnips.snipmate_ft_filter = {
       \ 'html'    : {'filetypes': ["html", "javascript", "_"] },
       \ 'xhtml'    : {'filetypes': ["xhtml", "html", "javascript", "_"] },
       \ 'cpp'    : {'filetypes': [] },
-      \ 'javascript'    : {'filetypes': ["javascript", "javascript-jasmine"] },
+      \ 'javascript'    : {'filetypes': ["javascript", "javascript-jasmine", "angular_js"] },
       \ }
 
 " Of course you want to adjust this to your own liking
-
+"
 " ejs files
 au BufNewFile,BufRead *.ejs set filetype=html
 
