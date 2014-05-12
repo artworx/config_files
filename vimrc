@@ -558,3 +558,9 @@ au BufNewFile,BufRead *.ejs set filetype=html
 " ivalkeen/vim-ctrlp-tjump
 nnoremap <c-]> :CtrlPtjump<cr>
 vnoremap <c-]> :CtrlPtjumpVisual<cr>
+
+let g:ctrlp_custom_ignore = '\v[\/]\tmp|public$'
+
+
+" map W to w
+cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
