@@ -8,19 +8,18 @@ call vundle#rc()
 :" required!
 Bundle 'gmarik/vundle'
 
-" My Bundles here:
-"
-" original repos on github
 Bundle 'tpope/vim-fugitive'
-"Bundle 'mileszs/ack.vim'
+Plugin 'airblade/vim-gitgutter'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'refactor-rails.vim'
 
+" snippets
 Bundle 'honza/vim-snippets'
 Bundle 'SirVer/ultisnips'
+Bundle "matthewsimo/angular-vim-snippets"
 
 Bundle 'L9'
+
+" Syntax checking
 Bundle 'scrooloose/syntastic'
 Bundle 'tomtom/tlib_vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -28,65 +27,75 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 " helps to end certain structures automatically. In Ruby, this means adding
 " end after if, do, def
 Bundle 'tpope/vim-endwise'
+
+" nerdtree
+Bundle 'scrooloose/nerdtree'
 " Just one NERDTree, always and ever. It will always look the same in all
 " tabs, including expanded/collapsed nodes, scroll position etc.
 Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'nerdtree-ack'
+Bundle 'taiansu/nerdtree-ag'
+
+" With this plugin, your vim comes to automatically opens popup menu for
+" completions when you enter characters or move the cursor in Insert mode. It
+" won't prevent you continuing entering characters.
 Bundle 'AutoComplPop'
 
 " Pasting in Vim with indentation adjusted to destination context
 Bundle 'sickill/vim-pasta'
+
+" RUBY
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
+Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'tpope/vim-bundler'
+Bundle 'lmeijvogel/vim-yaml-helper'
+Bundle 'refactor-rails.vim'
+
 Bundle 'kana/vim-textobj-user'
 Bundle 'matchit.zip'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 
 " Indentation based text objects
 Bundle 'michaeljsmith/vim-indent-object'
+
+" This plug-in provides automatic closing of quotes, parenthesis, brackets, etc.,
 Bundle 'Raimondi/delimitMate'
-Bundle 'ecomba/vim-ruby-refactoring'
+
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
+
+" CtrlP extension for fuzzy-search in tag matches.
 Bundle 'kien/ctrlp.vim'
-" CtrlP extension for fuzzy-search in tag matches. May be used instead of
-" :tjump or :tselect for IDE-like Goto declaration functionality
 Bundle 'ivalkeen/vim-ctrlp-tjump'
 
+" Bundle "bling/vim-airline"
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'tpope/vim-repeat'
 
 Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-bundler'
-Bundle 'plasticboy/vim-markdown'
 
 Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
 
 Bundle 'mivok/vimtodo'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'jimmyhchan/dustjs.vim'
 Bundle 'Lokaltog/vim-easymotion'
 
-Bundle 'svndiff'
-Bundle 'yaymukund/vim-rabl'
-
-Bundle 'plantuml-syntax'
-
-Bundle "pangloss/vim-javascript"
-
+" Bundle 'svndiff'
 Bundle "godlygeek/tabular"
 
 " https://github.com/marijnh/tern_for_vim
 " javascript complete
 Bundle "marijnh/tern_for_vim"
-Bundle "matthewsimo/angular-vim-snippets"
 
+" Syntax files
+Bundle 'plantuml-syntax'
+Bundle "pangloss/vim-javascript"
+Bundle 'yaymukund/vim-rabl'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'kchmck/vim-coffee-script'
 Bundle "groenewege/vim-less"
-
-Bundle "lmeijvogel/vim-yaml-helper"
 
 " front for ag, A.K.A. the_silver_searcher.
 Bundle 'rking/ag.vim'
@@ -392,6 +401,15 @@ hi DiffAdd      ctermfg=0 ctermbg=2 guibg='green'
 hi DiffDelete   ctermfg=0 ctermbg=1 guibg='red'
 hi DiffChange   ctermfg=0 ctermbg=4 guibg='blue'
 
+hi GitGutterAdd      ctermfg=0 ctermbg=2 guibg='green'
+hi GItGutterDelete   ctermfg=0 ctermbg=1 guibg='red'
+hi GitGutterChange   ctermfg=0 ctermbg=4 guibg='blue'
+
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '!'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_modified_removed = '<'
+
 function! CloseHiddenBuffers()
   " Tableau pour memoriser la visibilite des buffers
   let visible = {}
@@ -557,7 +575,6 @@ nnoremap <c-]> :CtrlPtjump<cr>
 vnoremap <c-]> :CtrlPtjumpVisual<cr>
 
 let g:ctrlp_custom_ignore = '\v[\/]\tmp|public$'
-
 
 " map W to w
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
