@@ -12,16 +12,13 @@ Bundle 'gmarik/vundle'
 "
 " original repos on github
 Bundle 'tpope/vim-fugitive'
-Bundle 'mileszs/ack.vim'
+"Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'refactor-rails.vim'
 
-" Bundle 'MarcWeber/ultisnips'
-Bundle 'SirVer/ultisnips'
-
-" Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
+Bundle 'SirVer/ultisnips'
 
 Bundle 'L9'
 Bundle 'scrooloose/syntastic'
