@@ -6,99 +6,99 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 :" required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 
 " snippets
-Bundle 'honza/vim-snippets'
-Bundle 'SirVer/ultisnips'
-Bundle "matthewsimo/angular-vim-snippets"
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'matthewsimo/angular-vim-snippets'
 
-Bundle 'L9'
+Plugin 'L9'
 
 " Syntax checking
-Bundle 'scrooloose/syntastic'
-Bundle 'tomtom/tlib_vim'
-Bundle 'MarcWeber/vim-addon-mw-utils'
+Plugin 'scrooloose/syntastic'
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
 
 " helps to end certain structures automatically. In Ruby, this means adding
 " end after if, do, def
-Bundle 'tpope/vim-endwise'
+Plugin 'tpope/vim-endwise'
 
 " nerdtree
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 " Just one NERDTree, always and ever. It will always look the same in all
 " tabs, including expanded/collapsed nodes, scroll position etc.
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'taiansu/nerdtree-ag'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'taiansu/nerdtree-ag'
 
 " With this plugin, your vim comes to automatically opens popup menu for
 " completions when you enter characters or move the cursor in Insert mode. It
 " won't prevent you continuing entering characters.
-Bundle 'AutoComplPop'
+Plugin 'AutoComplPop'
 
 " Pasting in Vim with indentation adjusted to destination context
-Bundle 'sickill/vim-pasta'
+Plugin 'sickill/vim-pasta'
 
 " RUBY
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-surround'
-Bundle 'ecomba/vim-ruby-refactoring'
-Bundle 'tpope/vim-bundler'
-Bundle 'lmeijvogel/vim-yaml-helper'
-Bundle 'refactor-rails.vim'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
+Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'tpope/vim-bundler'
+Plugin 'lmeijvogel/vim-yaml-helper'
+Plugin 'refactor-rails.vim'
 
-Bundle 'kana/vim-textobj-user'
-Bundle 'matchit.zip'
-Bundle 'nelstrom/vim-textobj-rubyblock'
+Plugin 'kana/vim-textobj-user'
+Plugin 'matchit.zip'
+Plugin 'nelstrom/vim-textobj-rubyblock'
 
 " Indentation based text objects
-Bundle 'michaeljsmith/vim-indent-object'
+Plugin 'michaeljsmith/vim-indent-object'
 
 " This plug-in provides automatic closing of quotes, parenthesis, brackets, etc.,
-Bundle 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate'
 
-Bundle 'mattn/gist-vim'
-Bundle 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim'
 
 " CtrlP extension for fuzzy-search in tag matches.
-Bundle 'kien/ctrlp.vim'
-Bundle 'ivalkeen/vim-ctrlp-tjump'
+Plugin 'kien/ctrlp.vim'
+Plugin 'ivalkeen/vim-ctrlp-tjump'
 
-" Bundle "bling/vim-airline"
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'majutsushi/tagbar'
-Bundle 'AndrewRadev/splitjoin.vim'
-Bundle 'tpope/vim-repeat'
+" Plugin 'bling/vim-airline'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'majutsushi/tagbar'
+Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'tpope/vim-repeat'
 
-Bundle 'tpope/vim-abolish'
+Plugin 'tpope/vim-abolish'
 
-Bundle 'xolox/vim-easytags'
-Bundle 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-misc'
 
-Bundle 'mivok/vimtodo'
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'mivok/vimtodo'
+Plugin 'Lokaltog/vim-easymotion'
 
-" Bundle 'svndiff'
-Bundle "godlygeek/tabular"
+" Plugin 'svndiff'
+Plugin 'godlygeek/tabular'
 
 " https://github.com/marijnh/tern_for_vim
 " javascript complete
-Bundle "marijnh/tern_for_vim"
+Plugin 'marijnh/tern_for_vim'
 
 " Syntax files
-Bundle 'plantuml-syntax'
-Bundle "pangloss/vim-javascript"
-Bundle 'yaymukund/vim-rabl'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'kchmck/vim-coffee-script'
-Bundle "groenewege/vim-less"
+Plugin 'plantuml-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'yaymukund/vim-rabl'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'groenewege/vim-less'
 
 " front for ag, A.K.A. the_silver_searcher.
-Bundle 'rking/ag.vim'
+Plugin 'rking/ag.vim'
 
 " http://www.vim.org/scripts/script.php?script_id=1905"
 map w <Plug>CamelCaseMotion_w
@@ -108,15 +108,12 @@ sunmap w
 sunmap b
 sunmap e
 
-Bundle 'camelcasemotion'
+Plugin 'camelcasemotion'
 
 " nodejs
-Bundle 'digitaltoad/vim-jade'
-
+Plugin 'digitaltoad/vim-jade'
 
 filetype plugin indent on     " required!
-
-
 
 let mapleader = ","
 imap jj <Esc>
