@@ -7,3 +7,5 @@ jferris-*.gemspec
 .idea
 *.taghl
 public/uploads/
+config/initializers/marionette.rb
+lib/generators

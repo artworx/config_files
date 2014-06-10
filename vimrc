@@ -574,4 +574,7 @@ vnoremap <c-]> :CtrlPtjumpVisual<cr>
 let g:ctrlp_custom_ignore = '\v[\/]\tmp|public$'
 
 " map W to w
-cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+"cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+
+" xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+command W w
