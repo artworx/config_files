@@ -489,7 +489,19 @@ let g:rails_projections = {
       \ "spec/factories/*.rb": {
       \   "command": "factory",
       \   "template": "FactoryGirl.define do\n factory: %S do\n end\n \nend",
-      \ }
+      \ },
+      \ "app/assets/javascripts/backbone/apps/*_app.js.coffee":  {
+      \   "command": "jmodule",
+      \ },
+      \ "app/assets/javascripts/backbone/entities/*.js.coffee":  {
+      \   "command": "jentity",
+      \ },
+      \ "app/assets/javascripts/backbone/apps/*_controller.js.coffee":  {
+      \   "command": "jcontroller",
+      \ },
+      \ "app/assets/javascripts/backbone/apps/*_view.js.coffee":  {
+      \   "command": "jview",
+      \ },
       \ }
 
 " file mappings
