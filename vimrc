@@ -94,11 +94,14 @@ Plugin 'plantuml-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'yaymukund/vim-rabl'
 Plugin 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled=1
+
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'groenewege/vim-less'
 
 " front for ag, A.K.A. the_silver_searcher.
 Plugin 'rking/ag.vim'
+Plugin 'rodjek/vim-puppet'
 
 " http://www.vim.org/scripts/script.php?script_id=1905"
 map w <Plug>CamelCaseMotion_w
