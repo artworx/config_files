@@ -103,6 +103,8 @@ Plugin 'groenewege/vim-less'
 Plugin 'rking/ag.vim'
 Plugin 'rodjek/vim-puppet'
 
+" Kick off builds and test suites using one of several asynchronous adapters
+Plugin 'tpope/vim-dispatch'
 " http://www.vim.org/scripts/script.php?script_id=1905"
 map w <Plug>CamelCaseMotion_w
 map b <Plug>CamelCaseMotion_b
@@ -450,6 +452,7 @@ if has('gui_running')
   set t_vb=
 endif
 
+let g:easytags_async = 1
 " By default the plug-in automatically updates and highlights your tags when
 " you stop typing for a moment. If you want to disable automatic highlighting
 " while keeping automatic updating enabled you can set this option to false:
@@ -593,3 +596,6 @@ let g:ctrlp_custom_ignore = '\v[\/]\tmp|public$'
 
 " xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 command W w
+
+set autoread
+set clipboard=unnamed

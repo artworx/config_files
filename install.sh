@@ -38,3 +38,5 @@ mkdir -p ~/.vim/bundle
 if [ ! -d ~/.vim/bundle/vundle ]; then
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi
+
+vim -c 'PluginInstall'
