@@ -599,3 +599,9 @@ command W w
 
 set autoread
 set clipboard=unnamed
+
+silent execute "! mkdir -p ~/.vim/backup"
+silent execute "! mkdir -p ~/.vim/tmp"
+
+set backupdir=~/.vim/backup//
+set directory=~/.vim/tmp//
