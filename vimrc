@@ -407,6 +407,9 @@ hi GitGutterAdd      ctermfg=0 ctermbg=2 guibg='green'
 hi GItGutterDelete   ctermfg=0 ctermbg=1 guibg='red'
 hi GitGutterChange   ctermfg=0 ctermbg=4 guibg='blue'
 
+" highlight search term
+hi Search cterm=NONE ctermfg=black ctermbg=white
+
 let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = '!'
 let g:gitgutter_sign_removed = '-'
@@ -589,7 +592,8 @@ au BufNewFile,BufRead *.ejs set filetype=html
 nnoremap <c-]> :CtrlPtjump<cr>
 vnoremap <c-]> :CtrlPtjumpVisual<cr>
 
-let g:ctrlp_custom_ignore = '\v[\/]\tmp|public$'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " map W to w
 "cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
