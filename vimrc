@@ -79,7 +79,6 @@ Plugin 'tpope/vim-abolish'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 
-Plugin 'mivok/vimtodo'
 Plugin 'Lokaltog/vim-easymotion'
 
 " Plugin 'svndiff'
@@ -101,11 +100,11 @@ Plugin 'groenewege/vim-less'
 
 " front for ag, A.K.A. the_silver_searcher.
 Plugin 'rking/ag.vim'
-Plugin 'rodjek/vim-puppet'
 
 " Kick off builds and test suites using one of several asynchronous adapters
 Plugin 'tpope/vim-dispatch'
 " http://www.vim.org/scripts/script.php?script_id=1905"
+
 map w <Plug>CamelCaseMotion_w
 map b <Plug>CamelCaseMotion_b
 map e <Plug>CamelCaseMotion_e
@@ -114,9 +113,6 @@ sunmap b
 sunmap e
 
 Plugin 'camelcasemotion'
-
-" nodejs
-Plugin 'digitaltoad/vim-jade'
 
 filetype plugin indent on     " required!
 
@@ -609,3 +605,26 @@ silent execute "! mkdir -p ~/.vim/tmp"
 
 set backupdir=~/.vim/backup//
 set directory=~/.vim/tmp//
+
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
+vmap <F2> ! boxes -drb -f ~/.boxes-config<CR>
+
+function! s:ChangeHashSyntax(line1,line2)
+    let l:save_cursor = getpos(".")
+    silent! execute ':' . a:line1 . ',' . a:line2 . 's/:\([a-z0-9_]\+\)\s\+=>/\1:/g'
+    call setpos('.', l:save_cursor)
+endfunction
+
+command! -range=% ChangeHashSyntax call <SID>ChangeHashSyntax(<line1>,<line2>)

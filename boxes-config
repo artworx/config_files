@@ -1,0 +1,25 @@
+BOX rb
+
+author "Alexandru Keszeg <akeszeg(at)gmail(dot)com>"
+revision "0.1"
+
+sample
+    # =========
+    # =       =
+    # =========
+ends
+
+shapes {
+    nw ("# =") n ("=") ne ("=")
+     w ("# =")          e ("=")
+    sw ("# =") s ("=") se ("=")
+}
+
+padding {
+   left 1             # alternatives: all, vert, lef, rig, bottom, top
+   right 1
+}                       # can be combined, e.g. all 3 top 1
+
+elastic (n,e,s,w)
+
+END rb
