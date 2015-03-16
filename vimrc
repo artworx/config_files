@@ -89,7 +89,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'marijnh/tern_for_vim'
 
 " Syntax files
-Plugin 'plantuml-syntax'
+Plugin 'aklt/plantuml-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'yaymukund/vim-rabl'
 Plugin 'plasticboy/vim-markdown'
