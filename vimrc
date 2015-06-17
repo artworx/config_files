@@ -8,15 +8,24 @@ call vundle#rc()
 :" required!
 Plugin 'gmarik/vundle'
 
+" Nerdtree
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'taiansu/nerdtree-ag'
+
+" Git
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+
+" Comments
 Plugin 'scrooloose/nerdcommenter'
 
-" snippets
+" Snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'matthewsimo/angular-vim-snippets'
 
+" Deps
 Plugin 'L9'
 
 " Syntax checking
@@ -28,16 +37,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 " end after if, do, def
 Plugin 'tpope/vim-endwise'
 
-" nerdtree
-Plugin 'scrooloose/nerdtree'
-" Just one NERDTree, always and ever. It will always look the same in all
-" tabs, including expanded/collapsed nodes, scroll position etc.
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'taiansu/nerdtree-ag'
-
-" With this plugin, your vim comes to automatically opens popup menu for
-" completions when you enter characters or move the cursor in Insert mode. It
-" won't prevent you continuing entering characters.
+" Autocomplete
 Plugin 'AutoComplPop'
 
 " Pasting in Vim with indentation adjusted to destination context
@@ -51,6 +51,9 @@ Plugin 'tpope/vim-bundler'
 Plugin 'lmeijvogel/vim-yaml-helper'
 Plugin 'refactor-rails.vim'
 
+" Indentation
+
+" custom text object for selecting ruby blocks.
 Plugin 'kana/vim-textobj-user'
 Plugin 'matchit.zip'
 Plugin 'nelstrom/vim-textobj-rubyblock'
@@ -68,50 +71,49 @@ Plugin 'mattn/webapi-vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'ivalkeen/vim-ctrlp-tjump'
 
-" Plugin 'bling/vim-airline'
+" better-looking, more functional vim statuslines
 Plugin 'Lokaltog/vim-powerline'
+
+" sidebar that displays the ctags-generated tags of the current file
 Plugin 'majutsushi/tagbar'
+
+" A vim plugin that simplifies the transition between multiline and single-line code
 Plugin 'AndrewRadev/splitjoin.vim'
+
+" repeat.vim: enable repeating supported plugin maps with "."
 Plugin 'tpope/vim-repeat'
 
+" abolish.vim: easily search for, substitute, and abbreviate multiple variants
+" of a word
 Plugin 'tpope/vim-abolish'
 
+" Automated tag file generation and syntax highlighting of tags in Vim
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 
+" Vim motions on speed!
 Plugin 'Lokaltog/vim-easymotion'
 
-" Plugin 'svndiff'
+" Vim script for text filtering and alignment
 Plugin 'godlygeek/tabular'
-
-" https://github.com/marijnh/tern_for_vim
-" javascript complete
-Plugin 'marijnh/tern_for_vim'
 
 " Syntax files
 Plugin 'aklt/plantuml-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'yaymukund/vim-rabl'
 Plugin 'plasticboy/vim-markdown'
-let g:vim_markdown_folding_disabled=1
-
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'groenewege/vim-less'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'solarnz/thrift.vim'
 
 " front for ag, A.K.A. the_silver_searcher.
 Plugin 'rking/ag.vim'
 
 " Kick off builds and test suites using one of several asynchronous adapters
 Plugin 'tpope/vim-dispatch'
-" http://www.vim.org/scripts/script.php?script_id=1905"
 
-map w <Plug>CamelCaseMotion_w
-map b <Plug>CamelCaseMotion_b
-map e <Plug>CamelCaseMotion_e
-sunmap w
-sunmap b
-sunmap e
-
+" Motions
 Plugin 'camelcasemotion'
 
 filetype plugin indent on     " required!
@@ -203,8 +205,8 @@ set numberwidth=5
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
 
-" Use <F11> to toggle between 'paste' and 'nopaste'
-set pastetoggle=<F11>
+" Use <F12> to toggle between 'paste' and 'nopaste'
+set pastetoggle=<F12>
 
 set nobackup
 set nowritebackup
@@ -253,14 +255,6 @@ set nofoldenable        "dont fold by default
 set foldlevel=10
 
 "
-" if has("folding")
-" set foldenable
-" set foldmethod=syntax
-" set foldlevel=1
-" set foldnestmax=2
-" set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
-" endif
-
 " Softtabs, 2 spaces
 set tabstop=2
 set shiftwidth=2
@@ -364,19 +358,10 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 set statusline=
-"set statusline+=%#todo#  "switch to todo highlight
-"set statusline+=%F       "full filename
-"set statusline+=%#error# "switch to error highlight
-"set statusline+=%y       "filetype
-"set statusline+=%*       "switch back to normal statusline highlight
-"set statusline+=%l       "line number"
-
 set statusline+=%#todo#
 set statusline+=%{fugitive#statusline()}
 set statusline+=%*
 set statusline+=%F       "tail of the filename
-"set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
-"set statusline+=%{&ff}] "file format
 set statusline+=%h      "help file flag
 set statusline+=%m      "modified flag
 set statusline+=%r      "read only flag
@@ -389,11 +374,6 @@ set statusline+=\ %P    "percent through file"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
-"autocmd bufwritepost * :call Svndiff("")
-noremap <F3> :call Svndiff("prev")<CR>
-noremap <F4> :call Svndiff("next")<CR>
-noremap <F5> :call Svndiff("clear")<CR>
 
 hi DiffAdd      ctermfg=0 ctermbg=2 guibg='green'
 hi DiffDelete   ctermfg=0 ctermbg=1 guibg='red'
@@ -437,6 +417,7 @@ function! CloseHiddenBuffers()
 endfun
 
 ca bo :call CloseHiddenBuffers()
+
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :TagbarOpenAutoClose<CR>
@@ -628,3 +609,19 @@ function! s:ChangeHashSyntax(line1,line2)
 endfunction
 
 command! -range=% ChangeHashSyntax call <SID>ChangeHashSyntax(<line1>,<line2>)
+
+"
+" Plugin customizations
+
+" plasticboy/vim-markdown
+let g:vim_markdown_folding_disabled=1
+
+" camelcasemotion
+map w <Plug>CamelCaseMotion_w
+map b <Plug>CamelCaseMotion_b
+map e <Plug>CamelCaseMotion_e
+sunmap w
+sunmap b
+sunmap e
+
+
