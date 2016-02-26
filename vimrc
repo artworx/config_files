@@ -72,7 +72,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'ivalkeen/vim-ctrlp-tjump'
 
 " better-looking, more functional vim statuslines
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'bling/vim-airline'
+" Plugin 'Lokaltog/vim-powerline'
 
 " sidebar that displays the ctags-generated tags of the current file
 Plugin 'majutsushi/tagbar'
@@ -107,6 +108,8 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'groenewege/vim-less'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'solarnz/thrift.vim'
+Plugin 'rhysd/vim-crystal'
+Plugin 'ekalinin/Dockerfile.vim'
 
 " front for ag, A.K.A. the_silver_searcher.
 Plugin 'rking/ag.vim'
@@ -392,32 +395,15 @@ let g:gitgutter_sign_modified = '!'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_modified_removed = '<'
 
-function! CloseHiddenBuffers()
-  " Tableau pour memoriser la visibilite des buffers
-  let visible = {}
-  " Pour chaque onglet...
-  for t in range(1, tabpagenr('$'))
-    " Et pour chacune de ses fenetres...
-    for b in tabpagebuflist(t)
-      " On indique que le buffer est visible.
-      let visible[b] = 1
+function DeleteHiddenBuffers()
+    let tpbl=[]
+    call map(range(1, tabpagenr('$')), 'extend(tpbl, tabpagebuflist(v:val))')
+    for buf in filter(range(1, bufnr('$')), 'bufexists(v:val) && index(tpbl, v:val)==-1')
+        silent execute 'bwipeout' buf
     endfor
-  endfor
-  " Pour chaque numero de buffer possible...
-  for b in range(1, bufnr('$'))
-    " Si b est un numero de buffer valide et qu'il n'est pas visible, on le
-    " supprime.
-    if bufexists(b) && !has_key(visible, b)
-      " On ferme donc tous les buffers qui ne valent pas 1 dans le tableau et qui
-      " sont pourtant charges en memoire.
-      execute 'bwipeout' b
-    endif
-  endfor
-  NERDTree
-  NERDTreeClose
-endfun
+endfunction
 
-ca bo :call CloseHiddenBuffers()
+ca bo :call DeleteHiddenBuffers()
 
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nmap <F8> :TagbarToggle<CR>
@@ -570,7 +556,7 @@ au BufNewFile,BufRead *.ejs set filetype=html
 nnoremap <c-]> :CtrlPtjump<cr>
 vnoremap <c-]> :CtrlPtjumpVisual<cr>
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*app/cache/*,*app/log/*
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " map W to w
@@ -602,6 +588,7 @@ function! s:align()
 endfunction
 
 vmap <F2> ! boxes -drb -f ~/.boxes-config<CR>
+vmap <F3> ! html2haml<CR>
 
 function! s:ChangeHashSyntax(line1,line2)
     let l:save_cursor = getpos(".")
@@ -625,4 +612,5 @@ sunmap w
 sunmap b
 sunmap e
 
+let g:syntastic_quiet_messages = { "type": "style" }
 
