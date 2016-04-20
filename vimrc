@@ -110,7 +110,9 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'solarnz/thrift.vim'
 Plugin 'rhysd/vim-crystal'
 Plugin 'ekalinin/Dockerfile.vim'
+" jade
 Plugin 'digitaltoad/vim-pug'
+Plugin 'isRuslan/vim-es6'
 
 " front for ag, A.K.A. the_silver_searcher.
 Plugin 'rking/ag.vim'
