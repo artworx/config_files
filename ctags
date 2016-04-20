@@ -1,3 +1,4 @@
 --regex-ruby=/^[ \t]*describe (.*) do/\1/d,rspec describe/
 --regex-ruby=/^[ \t]*context ['"](.*)['"] do/\1/C,rspec context/
 --regex-ruby=/^[ \t]*scope :(.*),/\1/d,ruby scope/
+--regex-ruby=/^[ \t]*power :(.*) do/\1/d,ruby scope/
