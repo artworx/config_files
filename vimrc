@@ -44,6 +44,7 @@ Plugin 'AutoComplPop'
 Plugin 'sickill/vim-pasta'
 
 " RUBY
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'ecomba/vim-ruby-refactoring'
@@ -99,6 +100,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'godlygeek/tabular'
 
 " Syntax files
+Plugin 'fatih/vim-go'
 Plugin 'aklt/plantuml-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'yaymukund/vim-rabl'
